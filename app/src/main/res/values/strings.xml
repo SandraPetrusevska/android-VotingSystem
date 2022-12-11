@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Voting system</string>
+    <string name="login">Log In</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="newAccount">No account yet? Create one</string>
+    <string name="registration">Registration</string>
+    <string name="loginAdmin">Log In as Administrator</string>
+    <string name="identification">Identification number</string>
+    <string name="passwordConf">Confirm password</string>
+    <string name="newVoting">New poll</string>
+    <string name="admin">Administrator</string>
+    <string name="poll">Create poll</string>
+    <string name="question">New question</string>
+    <string name="answer">New answer</string>
+    <string name="results">Results</string>
+    <string name="user">User view</string>
+    <string name="results2">Results</string>
+    <string name="submit">Submit</string>
+</resources>
