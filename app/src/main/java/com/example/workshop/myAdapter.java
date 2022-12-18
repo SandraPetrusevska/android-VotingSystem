@@ -30,8 +30,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.ViewHolder>  {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String animal = mData.get(position);
-        holder.myTextView.setText(animal);
+        String element = mData.get(position);
+        holder.myTextView.setText(element);
     }
 
     @Override

@@ -32,11 +32,15 @@ public class AdminView extends AppCompatActivity {
     EditText etext;
     ListView listViewQ;
     Button b;
+    Button logO;
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     ConstraintLayout parentLayout;
     EditText add;
+    int img = R.drawable.poll;
     int hint = 0;
+    int numberPolls;
+    String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,22 +51,25 @@ public class AdminView extends AppCompatActivity {
         etext = (EditText) findViewById(R.id.add);
         listViewQ = (ListView) findViewById(R.id.listViewQ);
         b= (Button) findViewById(R.id.newVoting);
+        logO = (Button) findViewById(R.id.logO);
 
         list = new ArrayList<String>();
-        adapter = new ArrayAdapter<String>(AdminView.this, android.R.layout.simple_list_item_1, list);
+        adapter = new ArrayAdapter<String>(AdminView.this, R.layout.list_row, list);
         parentLayout = (ConstraintLayout)findViewById(R.id.parentLayout);
 
         Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
-        String password = intent.getStringExtra("password");
+        username = intent.getStringExtra("username");
+        //String password = intent.getStringExtra("password");
         String hello = "Hello " + username + "!";
         text.setText(hello);
         listViewQ.setAdapter(adapter);
 
+        numberPolls = 0;
         Cursor allPolls = db.rawQuery("SELECT * FROM polls", null);
         if(allPolls.getCount()>0){
             if (allPolls.moveToFirst() ){
                 do {
+                    numberPolls++;
                     list.add(allPolls.getString(1));
                 } while (allPolls.moveToNext());
             }
@@ -76,6 +83,13 @@ public class AdminView extends AppCompatActivity {
                 String pos = toString().valueOf(position+1);
                 intent.putExtra("poll", poll);
                 intent.putExtra("position", pos);
+                startActivity(intent);
+            }
+        });
+        logO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -108,6 +122,7 @@ public class AdminView extends AppCompatActivity {
                        // adapter.notifyDataSetChanged();
                         Intent intent = new Intent(getApplicationContext(), AdminPoll.class);
                         intent.putExtra("poll", res);
+                        intent.putExtra("username", username);
                         startActivity(intent);
                     }
                     else {

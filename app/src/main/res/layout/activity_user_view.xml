@@ -6,10 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".UserView">
 
+    <!--  <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activePolls"
+        app:layout_constraintVertical_bias="0.025"> -->
+
+      <!--  <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:isScrollContainer="true"
+            android:orientation="vertical"></LinearLayout>
+
+    <Button
+        android:id="@+id/myResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="4dp"
+        android:backgroundTint="#ffff"
+        android:textAllCaps="false"
+        android:text="Results"
+        android:textAlignment="center"
+        android:textColor="#8b8989"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userView" /> -->
+
+    <Button
+        android:id="@+id/logO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:backgroundTint="#0000"
+        android:text="Log Out"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="@color/purple"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/userView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:textAlignment="center"
         android:textColor="@color/purple"
         android:textSize="25sp"
@@ -19,49 +71,53 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/activePolls"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Active Polls:"
-        android:layout_marginLeft="10dp"
-        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userView"
-        app:layout_constraintVertical_bias="0.061" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activePolls"
-        app:layout_constraintVertical_bias="0.025">
-
-        <LinearLayout
-            android:id="@+id/ll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:isScrollContainer="true"
-            android:orientation="vertical"></LinearLayout>
-    </ScrollView>
+        app:layout_constraintVertical_bias="0.031" />
 
     <ListView
-        android:id="@+id/listPolls"
-        android:layout_width="match_parent"
+            android:id="@+id/listPolls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activePolls"
+            app:layout_constraintVertical_bias="0.025"/>
+   <!-- </ScrollView> -->
+
+    <Button
+        android:id="@+id/myResults"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="4dp"
+        android:backgroundTint="@color/purple"
+        android:text="My Polls"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userView"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintTop_toBottomOf="@id/listPolls"
+        app:layout_constraintVertical_bias="0.968" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

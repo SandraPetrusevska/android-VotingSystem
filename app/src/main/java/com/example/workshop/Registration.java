@@ -23,7 +23,7 @@ public class Registration extends AppCompatActivity {
         db=openOrCreateDatabase("votingSystem", MODE_PRIVATE, null);
     }
     public Boolean checkusername(String username){
-        Cursor cursor = db.rawQuery("SELECT * FROM USERS WHERE username = ?", new String[] {username});
+        Cursor cursor = db.rawQuery("SELECT * FROM users WHERE username = ?", new String[] {username});
         Cursor cursor2 = db.rawQuery("SELECT * FROM admins WHERE username = ?",new String[] {username});
         if (cursor.getCount()>0 || cursor2.getCount()>0) {
             cursor.close();
